@@ -1,0 +1,6 @@
+{
+  "name": "Umiya Studio - Professional Photoshoot & Video Showcase",
+  "description": "A full-featured clone of Shoott for Umiya Studio USA with full WordPress-style live customization, booking engine, multi-city photo spots, and rich YouTube video embed showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
