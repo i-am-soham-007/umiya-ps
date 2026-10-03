@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#3A402D]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#3A402D]">
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
@@ -115,29 +115,7 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Col 4: Quick Action & WP Customizer */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#D4E2BA]">
-              Quick Actions
-            </h4>
-            <div className="space-y-2">
-              <button
-                onClick={onOpenBooking}
-                className="w-full py-2 px-3 rounded-lg bg-[#1E3A8A] text-white font-bold text-xs hover:bg-[#3D4D1D] transition text-center shadow-xs"
-              >
-                Book 30-Min Shoot
-              </button>
-              <button
-                onClick={onToggleCustomizer}
-                className="w-full py-2 px-3 rounded-lg bg-[#DC2626]/20 text-[#D4E2BA] border border-[#DC2626]/40 font-bold text-xs hover:bg-[#DC2626]/30 transition text-center"
-              >
-                Admin Login
-              </button>
-            </div>
-            <p className="text-[11px] text-[#8C887B] leading-normal pt-1">
-              Guaranteed satisfaction or 100% free re-shoot.
-            </p>
-          </div>
+
 
         </div>
 

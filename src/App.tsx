@@ -6,7 +6,6 @@
 import React, { useState, useEffect } from 'react';
 import { SiteConfig, YouTubeVideo } from './types';
 import { initialSiteConfig } from './data/defaultConfig';
-import { AnnouncementBar } from './components/AnnouncementBar';
 import { Navbar } from './components/Navbar';
 import { HowItWorks } from './components/HowItWorks';
 import { VideoShowcase } from './components/VideoShowcase';
@@ -18,7 +17,6 @@ import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { VideoModal } from './components/VideoModal';
-import { AdminDashboard } from './components/admin/AdminDashboard';
 import { StoryDetailsPage } from './components/StoryDetailsPage';
 import { InquiryPage } from './components/InquiryPage';
 import { Sliders, Sparkles } from 'lucide-react';
@@ -65,7 +63,6 @@ export default function App() {
   const [isCustomizerOpen, setIsCustomizerOpen] = useState<boolean>(false);
   const [customizerActiveTab, setCustomizerActiveTab] = useState<string>('theme');
   const [previewDevice, setPreviewDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
-  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState<boolean>(true);
 
   // Persist to localStorage whenever config changes
   useEffect(() => {
@@ -75,6 +72,8 @@ export default function App() {
       console.error('Failed to save config:', e);
     }
   }, [config]);
+
+
 
   const handleUpdateConfig = (newConfig: SiteConfig) => {
     setConfig(newConfig);
@@ -158,17 +157,6 @@ export default function App() {
       {/* Device Preview Outer Container wrapper */}
       <div className={getDeviceFrameClass()}>
         
-        {/* Top Announcement Bar */}
-        {config.announcement?.enabled && isAnnouncementVisible && (
-          <AnnouncementBar
-            text={config.announcement.text}
-            linkText={config.announcement.linkText}
-            accentColor={config.theme.accentColor}
-            onLinkClick={() => handleNavigateToInquiryPage()}
-            onClose={() => setIsAnnouncementVisible(false)}
-          />
-        )}
-
         {/* Primary Navbar */}
         <Navbar
           config={config}
@@ -308,12 +296,6 @@ export default function App() {
         onClose={() => setVideoModalUrl(null)}
         onOpenBooking={handleNavigateToInquiryPage}
         primaryColor={config.theme.primaryColor}
-      />
-
-      {/* Admin Dashboard Modal */}
-      <AdminDashboard
-        isOpen={isCustomizerOpen}
-        onClose={() => setIsCustomizerOpen(false)}
       />
     </div>
   );
